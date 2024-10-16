@@ -288,8 +288,8 @@ export const projectData = [
     summary: `My portfolio website is made using Threejs. It has features like fiber,drei,spring so that it helps in incorporating 3D models into my React project styled with tailwindcss.I have made two worlds 1) MonsterVerse 2) OnePiece in dark and lightmodes and also has information about me and my skills & projects `,
     tags: ["Threejs","react-threejs/fiber","reactjs","tailwindcss","dark/light-mode"],
     link: {
-         url : "https://sudokooo.netlify.app/",
-        github : "https://github.com/SuneelPradeep/sudoku",
+         url : "https://suneelpradeep.netlify.app/",
+        github : "https://github.com/SuneelPradeep/3d_portfolio",
           },
     },
     { 
