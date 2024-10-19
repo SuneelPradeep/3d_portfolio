@@ -4,8 +4,9 @@ import NightSkyScene from '../assets/3d/night_sky_visible_spectrum_monochromatic
 import { useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
+
 const NightSky = ({isRotating, ...props}) => {
-    const {scene,animations} = useGLTF(NightSkyScene)
+    const {scene,animations} = useGLTF(NightSkyScene,true, 'https://www.gstatic.com/draco/v1/decoders/')
   const nightskyRef = useRef()
 
   useFrame((_,delta)=>{
@@ -14,11 +15,13 @@ const NightSky = ({isRotating, ...props}) => {
     }
   })
   return (
+    
       <mesh ref={nightskyRef} {...props} scale={[10,10,10]} position={[0,1,1]}>
         <directionalLight intensity={10} position={[0,10,0]} />
         <ambientLight intensity={10} />
   <primitive object={scene} />
       </mesh>
+      
   )}
 
 

@@ -39,7 +39,7 @@ const Home = () => {
             return()=> lightaudioRef.current.pause()
           }          
         }    
-    },[isPlayingAudio])
+    },[isPlayingAudio,darkMode])
 
       const adjustCityScreen = ()=>{
          let screenScale, screenPosition;
@@ -69,7 +69,7 @@ const Home = () => {
         }
       <div className='bottom-12 left-2 absolute'>
         {/* <img src={!isPlayingAudio ? soundoff : soundon } alt='Play Music' className='w-10 h-10 cursor-pointer' onClick={() => setIsPlayingAudio(aud => !aud)} /> */}
-        {isPlayingAudio ? <TbMusicOff className={`w-8 h-8 cursor-pointer ${darkMode ? 'text-teal-300' : 'text-violet-400'}`} onClick={() => setIsPlayingAudio(aud => !aud)} /> 
+        {!isPlayingAudio ? <TbMusicOff className={`w-8 h-8 cursor-pointer ${darkMode ? 'text-teal-300' : 'text-violet-400'}`} onClick={() => setIsPlayingAudio(aud => !aud)} /> 
         : <TbMusic className={`w-8 h-8 cursor-pointer ${darkMode ? 'text-teal-300' : 'text-violet-400'}`}  onClick={() => setIsPlayingAudio(aud => !aud)}/> }
       </div>
       <ThemeMode />

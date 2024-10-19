@@ -1,12 +1,17 @@
 
 import { Canvas } from '@react-three/fiber'
-import React, { Suspense,useState } from 'react'
+import React, { lazy, Suspense,useState } from 'react'
 import Loader from '../components/Loader'
-import SeaKeep from '../models/SeaKeep'
-import GoingMerry from '../models/GoingMerry'
-import Bird from '../models/Bird'
-import Luffy from '../models/Luffy'
+// import SeaKeep from '../models/SeaKeep'
+// import GoingMerry from '../models/GoingMerry'
+// import Bird from '../models/Bird'
+// import Luffy from '../models/Luffy'
+import { Preload } from '@react-three/drei'
 
+const SeaKeep = lazy(()=> import("../models/SeaKeep"))
+const GoingMerry = lazy(()=> import("../models/GoingMerry"))
+const Bird = lazy(()=> import("../models/Bird"))
+const Luffy = lazy(()=> import("../models/Luffy"))
 
 const LightHome = () => {
     const [isRotating,setisRotating] = useState(false)
@@ -32,6 +37,7 @@ const LightHome = () => {
   return (
     <Canvas camera={{  near : 0.1, far:1000}} className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}>
         <Suspense fallback={<Loader />} >
+        <Preload all />
         {/* <directionalLight position={[1,1,1]} intensity={0} /> */}
         <ambientLight intensity={2} />
         {/* <pointLight />

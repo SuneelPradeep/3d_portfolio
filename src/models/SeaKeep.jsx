@@ -17,7 +17,7 @@ import { changeCurrentStage } from '../slice/HomeSlice'
 // import {THREE } from 'three';
 
 const SeaKeep = ({isRotating, setisRotating, setCurrentStage ,...props}) => {
-  const { nodes, materials } = useGLTF(SeaKeepScene)
+  const { nodes, materials } = useGLTF(SeaKeepScene,true, 'https://www.gstatic.com/draco/v1/decoders/')
   const currentStage = useSelector((state)=> state.currentStage)
   const dispatch = useDispatch()
   const seakeepRef = useRef()

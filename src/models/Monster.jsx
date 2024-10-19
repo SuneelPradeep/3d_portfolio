@@ -12,7 +12,7 @@ import { useGLTF, useAnimations } from '@react-three/drei'
 
 const Monster =({playSequence,currentAnimation ,...props}) => {
   const monsterRef = useRef()
-  const { nodes, materials, animations } = useGLTF(MonsterScene)
+  const { nodes, materials, animations } = useGLTF(MonsterScene,true, 'https://www.gstatic.com/draco/v1/decoders/')
   const { actions } = useAnimations(animations, monsterRef)
   
   useEffect(()=>{

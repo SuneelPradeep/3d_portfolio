@@ -12,7 +12,7 @@ import GodZillaScene from '../assets/3d/godzilla_2014_-_kiss_of_death.glb'
 
 const GodZilla =(props)=> {
   const group = useRef()
-  const {scene, nodes, materials, animations } = useGLTF(GodZillaScene)
+  const {scene, nodes, materials, animations } = useGLTF(GodZillaScene,true, 'https://www.gstatic.com/draco/v1/decoders/')
   const { actions } = useAnimations(animations, group)
   
   useEffect(()=>{

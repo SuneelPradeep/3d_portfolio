@@ -4,7 +4,7 @@ import { useAnimations, useGLTF } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 
 const Bird = () => {
-    const {scene,animations} = useGLTF(BirdScene)
+    const {scene,animations} = useGLTF(BirdScene,true, 'https://www.gstatic.com/draco/v1/decoders/')
     const birdRef = useRef()
     const {actions} = useAnimations(animations,birdRef)
     

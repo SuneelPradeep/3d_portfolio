@@ -2,9 +2,14 @@ import React from 'react'
 import { projectData } from '../constants'
 import { NavLink } from 'react-router-dom'
 import { FaArrowRight, FaGithub } from 'react-icons/fa'
+import NormalLoader from '../components/NormalLoader'
+
+
+
 
 const ProjectsSection = () => {
   return (
+    <React.Suspense fallback={<NormalLoader />}>
     <div className='flex flex-wrap my-20 gap-16'>
      
     {projectData.map((proj,id)=>(
@@ -41,6 +46,7 @@ const ProjectsSection = () => {
         </div>
     ))}
    </div>
+   </React.Suspense>
   )
 }
 

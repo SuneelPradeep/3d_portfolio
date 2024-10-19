@@ -12,7 +12,7 @@ import Gear5Scene from '../assets/3d/luffy_gear_5.glb'
 
 const Gear5Luffy =  ({currentAnimation,...props}) => {
   const gear5Ref = useRef()
-  const { nodes, materials, animations } = useGLTF(Gear5Scene)
+  const { nodes, materials, animations } = useGLTF(Gear5Scene,true, 'https://www.gstatic.com/draco/v1/decoders/')
   const { actions } = useAnimations(animations, gear5Ref)
 
 

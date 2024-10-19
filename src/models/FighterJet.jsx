@@ -13,7 +13,7 @@ import { useFrame } from '@react-three/fiber'
 
 const FighterJet = (props) =>{
   const jetRef = useRef()
-  const { nodes, materials, animations } = useGLTF(f14)
+  const { nodes, materials, animations } = useGLTF(f14,true, 'https://www.gstatic.com/draco/v1/decoders/')
   const { actions } = useAnimations(animations, jetRef)
  
   // useEffect(()=>{

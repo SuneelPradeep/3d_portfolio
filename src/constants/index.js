@@ -28,7 +28,7 @@ import {
     english,telugu,japanese,hindi,
 } from "../assets/icons";
 
-import {dtulogo,narayanalogo,svnlogo,imglogo,ezylogo,hbsslogo,
+import {dtulogo,narayanalogo,svnlogo,imglogo,ezylogo,hbsslogo,recykalogo,
     animeshop,deliveroo,handwritten,uber,music, movieeflix,
     dtu,nptel,coursera,scaler,pro5ai
 } from '../assets/images'
@@ -175,7 +175,19 @@ export const skills = [
 ];
 
 export const WorkExperienceData = [
-    {id:1,
+    { 
+        id:4,
+        logo: recykalogo,
+        name : "Recykal (Rapidue Technologies)",
+        period : {start : "Sep 2024 ", end :"Present"},
+        position : "Software Developer",
+        iconBg: "#787276",
+        location : "Hyderabad, Telangana",
+        summary : "Developed user interfaces related to Waste Management and Recycling concepts like EPR using ReactJS and managed complex State management using Reduxjs/Toolkit, RTK-query and UI with Material UI and Bootstrap/ TailwindCSS to implement responsive design and ensure cross-browser compatibility and optimized for performance, scalability and Managed Git repositories in GitLab",
+        keyFocus : ["ReactJS", "NextJS", "Redux","ThreeJS","PWA", "MaterialUI","GitLab","API development"]
+},
+    { 
+        id:1,
         logo: hbsslogo,
         name : "HB Software Solutions",
         period : {start : "Jul 2021 ", end :"Jan 2024"},
@@ -202,7 +214,7 @@ export const WorkExperienceData = [
     period : {start : "May 2020 ", end :"Jul 2020"},
     position : "Software  Developer Trainee intern",
     location : "New Delhi, India",
-    iconBg: "#a2d2ff",
+    iconBg: "#adfda2",
     summary : "Worked on making a webpage that collects information about the different classes and rating of the schools and Admission process and prices of the tuition of various schools and displayed on the ezy schooling website  using their API",
     keyFocus : ["HTML","CSS","Javascript"]
 },

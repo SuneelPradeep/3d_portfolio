@@ -7,6 +7,7 @@ import narayanalogo from './education/narayana.png'
 import hbsslogo from './work/hbss.png'
 import imglogo from './work/immaginovate.png'
 import ezylogo from './work/ezy2.png'
+import recykalogo from './work/recykal.png'
 
 import animeshop from './projects/animeshop.png'
 import deliveroo from './projects/deliveroo.png'
@@ -25,7 +26,7 @@ import dtu from './projects/dtu.jpeg'
 
 
 export {
-     dtulogo,svnlogo,narayanalogo,hbsslogo,imglogo,ezylogo,
+     dtulogo,svnlogo,narayanalogo,hbsslogo,imglogo,ezylogo,recykalogo,
     uber,music,deliveroo,animeshop,handwritten,movieeflix,sudoku,portfolio,
     pro5ai,dtu,nptel,scaler,coursera
 }

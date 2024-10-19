@@ -4,6 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
+::-webkit-scrollbar {
+  display: none;
+}
 :root {
   --blue-rgb: 237 245 255;
   --green-rgb: 125 161 35;

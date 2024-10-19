@@ -15,7 +15,7 @@ import {a} from '@react-spring/three'
 
 const GoingMerry =({islandPosition,children,...props}) =>{
 
-  const { nodes, materials,animations,scene } = useGLTF(onepieceship)
+  const { nodes, materials,animations,scene } = useGLTF(onepieceship,true, 'https://www.gstatic.com/draco/v1/decoders/')
   const shipRef = useRef()
   const {actions} = useAnimations(animations,shipRef)
   const speed = 0.008; // Speed of the ship

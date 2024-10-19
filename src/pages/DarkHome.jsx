@@ -1,13 +1,17 @@
 
 import { Canvas } from '@react-three/fiber'
-import React, { Suspense, useState } from 'react'
-import LACity from '../models/LACity'
-import GodZilla from '../models/Godzilla'
-import NightSky from '../models/NightSky'
-import FighterJet from '../models/FighterJet'
+import React, {lazy, Suspense, useState } from 'react'
+// import LACity from '../models/LACity'
+// import GodZilla from '../models/Godzilla'
+// import NightSky from '../models/NightSky'
+// import FighterJet from '../models/FighterJet'
 import Loader from '../components/Loader'
+import {Preload} from '@react-three/drei'
 
-
+const LACity = lazy(()=> import ("../models/LACity"))
+const NightSky = lazy(()=> import ('../models/NightSky'))
+const FighterJet = lazy(()=> import ('../models/FighterJet'))
+const GodZilla = lazy(()=> import ('../models/Godzilla'))
 
 const DarkHome = () => {
     const [isRotating,setisRotating] = useState(false)
@@ -30,9 +34,10 @@ const DarkHome = () => {
     const [cityScale, cityPosition] = adjustCityScreen()
 
   return (
-    <Canvas camera={{near : 0.1, far:1000}} className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}>
+    <Canvas camera={{near : 0.1, far:1000}} className={`w-full h-screen mb-4 bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}>
         <Suspense fallback={<Loader />} >
-        <directionalLight position={[1,1,1]} intensity={2}   />
+        <Preload all />
+        <directionalLight position={[1,1,1]} intensity={2} />
         <ambientLight intensity={0.5} />
         {/* <pointLight />
         <spotLight /> */}

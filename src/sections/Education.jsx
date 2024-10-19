@@ -2,9 +2,11 @@ import React from 'react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
 import { EducationData } from '../constants'
+import NormalLoader from '../components/NormalLoader'
 
 const Education = ({darkMode}) => {
   return (
+    <React.Suspense fallback={<NormalLoader />}>
     <div className="py-16">
     <h3 className='subhead-text'> My Education </h3>
     <div className="mt-5 flex flex-col gap-3 text-slate-500">
@@ -44,6 +46,7 @@ const Education = ({darkMode}) => {
      </VerticalTimeline>
      </div>
    </div>
+   </React.Suspense>
    
 
    

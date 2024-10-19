@@ -12,7 +12,7 @@ import LuffyScene from '../assets/3d/monkey_d._luffy.glb'
 
 const Luffy = (props) => {
   const luffyRef = useRef()
-  const { nodes, materials, animations } = useGLTF(LuffyScene)
+  const { nodes, materials, animations } = useGLTF(LuffyScene,true, 'https://www.gstatic.com/draco/v1/decoders/')
   const { actions } = useAnimations(animations, luffyRef)
   
   useEffect(()=>{

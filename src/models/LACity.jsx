@@ -23,7 +23,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { changeCurrentStage, changeMode } from '../slice/HomeSlice'
 
 const  LACity = ({isRotating,setisRotating, children, ...props}) => {
-  const { nodes, materials } = useGLTF(LAScene)
+  const { nodes, materials } = useGLTF(LAScene,true, 'https://www.gstatic.com/draco/v1/decoders/')
   const currentStage = useSelector((state)=> state.currentStage)
   const dispatch = useDispatch()
   const cityRef = useRef()

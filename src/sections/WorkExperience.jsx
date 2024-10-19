@@ -2,11 +2,13 @@ import React, { useState } from 'react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
 import 'react-vertical-timeline-component/style.min.css'
 import { WorkExperienceData } from '../constants'
+import NormalLoader from '../components/NormalLoader'
 
 const WorkExperience = ({darkMode}) => {
   const [readmore,setReadmore] = useState(false)
 
   return (
+    <React.Suspense fallback={<NormalLoader />}>
     <div className="py-16">
     <h3 className='subhead-text'> Work Experience </h3>
     <div className="mt-5 flex flex-col gap-3 text-slate-500">
@@ -45,6 +47,7 @@ const WorkExperience = ({darkMode}) => {
      </VerticalTimeline>
      </div>
    </div>
+   </React.Suspense>
   )
 }
 

@@ -1,13 +1,16 @@
-import React, {Suspense, useState } from 'react'
+import React, {lazy, Suspense, useState } from 'react'
 import Loader from '../components/Loader'
 import { Canvas } from '@react-three/fiber'
 import Alert from '../components/Alert'
 import useAlert from '../hooks/useAlert'
-import Monster from '../models/Monster'
+// import Monster from '../models/Monster'
 import { useSelector } from 'react-redux'
-import Gear5Luffy from '../models/Gear5Luffy'
+// import Gear5Luffy from '../models/Gear5Luffy'
 import { useFormspark } from '@formspark/use-formspark'
+import { Preload } from '@react-three/drei'
 
+const Monster = lazy(()=> import("../models/Monster"))
+const Gear5Luffy = lazy(()=> import("../models/Gear5Luffy"))
 
 const ContactSection = () => {
   
@@ -93,6 +96,7 @@ const ContactSection = () => {
             <directionalLight intensity={2.5} position={[0,0,1]} />
             <ambientLight intensity={0.5} />
         <Suspense fallback={<Loader />}>
+        <Preload all />
         {darkMode ?
          (<Monster 
         position={[0.5,-0.85,0]} rotation ={[12.6,-0.6,0]} scale={[2.5,2.5,2.5]} currentAnimation={darkcurrentAnimation} />) 
