@@ -16,7 +16,7 @@ const Naruto =({currentAnimation} ,...props) =>{
   const narutoRef = useRef()
   const { nodes, materials, animations } = useGLTF(NarutoScene)
   const { actions } = useAnimations(animations, narutoRef)
-  s
+  
   const adjustNarutoScreen = ()=>{
     let screenScale=[2.5,2.5,2.5], screenPosition=[0,-2.2,0.1]
       if(window.innerWidth < 450) {
