@@ -1,5 +1,5 @@
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useRef, useState, Suspense } from 'react'
 import HomeInfo from '../components/HomeInfo'
 import { useSelector } from 'react-redux'
 
@@ -10,6 +10,7 @@ import binksake from '../assets/one_piece_bink_no_sake.mp3'
 import onepiece from '../assets/one_piece.mp3'
 // import { soundoff,soundon } from '../assets/icons'
 import { TbMusic, TbMusicOff } from 'react-icons/tb'
+import LoadNaruto from '../sections/LoadNaruto'
 
 const Home = () => {
     //const [isRotating,setisRotating] = useState(false)
@@ -63,9 +64,10 @@ const Home = () => {
       <div className="absolute top-16   left-0 right-0 z-10 flex items-center justify-center">
       <HomeInfo currentStage={currentStage} />
         </div>
+  
        {darkMode ?
-        ( <DarkHome />) 
-       :  (<LightHome />)
+        ( <DarkHome darkMode={darkMode} />) 
+       :  (<LightHome darkMode={darkMode} />)
         }
       <div className='bottom-12 left-2 absolute'>
         {/* <img src={!isPlayingAudio ? soundoff : soundon } alt='Play Music' className='w-10 h-10 cursor-pointer' onClick={() => setIsPlayingAudio(aud => !aud)} /> */}

@@ -7,13 +7,14 @@ import Loader from '../components/Loader'
 // import Bird from '../models/Bird'
 // import Luffy from '../models/Luffy'
 import { Preload } from '@react-three/drei'
+import LoadNaruto from '../sections/LoadNaruto'
 
 const SeaKeep = lazy(()=> import("../models/SeaKeep"))
 const GoingMerry = lazy(()=> import("../models/GoingMerry"))
 const Bird = lazy(()=> import("../models/Bird"))
 const Luffy = lazy(()=> import("../models/Luffy"))
 
-const LightHome = () => {
+const LightHome = ({darkMode}) => {
     const [isRotating,setisRotating] = useState(false)
     
 
@@ -36,7 +37,7 @@ const LightHome = () => {
 
   return (
     <Canvas camera={{  near : 0.1, far:1000}} className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}>
-        <Suspense fallback={<Loader />} >
+        <Suspense fallback={<LoadNaruto darkMode={darkMode} /> } >
         <Preload all />
         {/* <directionalLight position={[1,1,1]} intensity={0} /> */}
         <ambientLight intensity={2} />

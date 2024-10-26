@@ -5,17 +5,20 @@ import React, {lazy, Suspense, useState } from 'react'
 // import GodZilla from '../models/Godzilla'
 // import NightSky from '../models/NightSky'
 // import FighterJet from '../models/FighterJet'
-import Loader from '../components/Loader'
+// import Loader from '../components/Loader'
 import {Preload} from '@react-three/drei'
+import LoadNaruto from '../sections/LoadNaruto'
+import Naruto from '../models/Naruto'
+import { useSelector } from 'react-redux'
 
 const LACity = lazy(()=> import ("../models/LACity"))
 const NightSky = lazy(()=> import ('../models/NightSky'))
 const FighterJet = lazy(()=> import ('../models/FighterJet'))
 const GodZilla = lazy(()=> import ('../models/Godzilla'))
 
-const DarkHome = () => {
+const DarkHome = ({darkMode}) => {
     const [isRotating,setisRotating] = useState(false)
-    
+    // const darkMode = useSelector(state=> state.darkMode)
     const adjustCityScreen = ()=>{
         let screenScale, screenPosition;
           if(window.innerWidth < 450) {
@@ -35,10 +38,11 @@ const DarkHome = () => {
 
   return (
     <Canvas camera={{near : 0.1, far:1000}} className={`w-full h-screen mb-4 bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`}>
-        <Suspense fallback={<Loader />} >
+        <Suspense fallback={<LoadNaruto darkMode={darkMode} /> } >
         <Preload all />
         <directionalLight position={[1,1,1]} intensity={2} />
         <ambientLight intensity={0.5} />
+        
         {/* <pointLight />
         <spotLight /> */}
         <hemisphereLight skyColor='#ffffff' groundColor="#ffffff" intensity={5} />

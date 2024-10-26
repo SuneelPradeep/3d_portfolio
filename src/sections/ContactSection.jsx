@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux'
 // import Gear5Luffy from '../models/Gear5Luffy'
 import { useFormspark } from '@formspark/use-formspark'
 import { Preload } from '@react-three/drei'
+import LoadNaruto from './LoadNaruto'
 
 const Monster = lazy(()=> import("../models/Monster"))
 const Gear5Luffy = lazy(()=> import("../models/Gear5Luffy"))
@@ -95,7 +96,7 @@ const ContactSection = () => {
         <Canvas camera={{ position : [0,0,5]}}>
             <directionalLight intensity={2.5} position={[0,0,1]} />
             <ambientLight intensity={0.5} />
-        <Suspense fallback={<Loader />}>
+        <Suspense fallback={<LoadNaruto darkMode={darkMode} />}>
         <Preload all />
         {darkMode ?
          (<Monster 
